@@ -1,13 +1,19 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@radix-ui/react-label"
-import { Link } from "react-router-dom"
+import Link from "next/link"
 
-const LoginPage = () => {
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+
+export function LoginForm() {
   return (
-    <section className="flex justify-center items-center h-screen">
-      <Card className="w-full max-w-sm">
+    <Card className="mx-auto max-w-sm">
       <CardHeader>
         <CardTitle className="text-2xl">Login</CardTitle>
         <CardDescription>
@@ -28,7 +34,7 @@ const LoginPage = () => {
           <div className="grid gap-2">
             <div className="flex items-center">
               <Label htmlFor="password">Password</Label>
-              <Link className="ml-auto inline-block text-sm underline" to={""}>
+              <Link href="#" className="ml-auto inline-block text-sm underline">
                 Forgot your password?
               </Link>
             </div>
@@ -43,14 +49,11 @@ const LoginPage = () => {
         </div>
         <div className="mt-4 text-center text-sm">
           Don&apos;t have an account?{" "}
-          <Link className="underline" to={""}>
+          <Link href="#" className="underline">
             Sign up
           </Link>
         </div>
       </CardContent>
     </Card>
-    </section>
   )
 }
-
-export default LoginPage
